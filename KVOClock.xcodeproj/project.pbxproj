@@ -19,6 +19,7 @@
 		F69AF5A41784B2F500CBE183 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F69AF5A21784B2F500CBE183 /* MainStoryboard_iPhone.storyboard */; };
 		F69AF5A71784B2F500CBE183 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F69AF5A51784B2F500CBE183 /* MainStoryboard_iPad.storyboard */; };
 		F69AF5AA1784B2F500CBE183 /* DRTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69AF5A91784B2F500CBE183 /* DRTViewController.m */; };
+		F69AF5B21784B33800CBE183 /* DRTTimerControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F69AF5B11784B33800CBE183 /* DRTTimerControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		F69AF5A61784B2F500CBE183 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		F69AF5A81784B2F500CBE183 /* DRTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRTViewController.h; sourceTree = "<group>"; };
 		F69AF5A91784B2F500CBE183 /* DRTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRTViewController.m; sourceTree = "<group>"; };
+		F69AF5B01784B33800CBE183 /* DRTTimerControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRTTimerControl.h; sourceTree = "<group>"; };
+		F69AF5B11784B33800CBE183 /* DRTTimerControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRTTimerControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,10 +90,12 @@
 			children = (
 				F69AF5991784B2F500CBE183 /* DRTAppDelegate.h */,
 				F69AF59A1784B2F500CBE183 /* DRTAppDelegate.m */,
-				F69AF5A21784B2F500CBE183 /* MainStoryboard_iPhone.storyboard */,
-				F69AF5A51784B2F500CBE183 /* MainStoryboard_iPad.storyboard */,
 				F69AF5A81784B2F500CBE183 /* DRTViewController.h */,
 				F69AF5A91784B2F500CBE183 /* DRTViewController.m */,
+				F69AF5B01784B33800CBE183 /* DRTTimerControl.h */,
+				F69AF5B11784B33800CBE183 /* DRTTimerControl.m */,
+				F69AF5A21784B2F500CBE183 /* MainStoryboard_iPhone.storyboard */,
+				F69AF5A51784B2F500CBE183 /* MainStoryboard_iPad.storyboard */,
 				F69AF5911784B2F500CBE183 /* Supporting Files */,
 			);
 			path = KVOClock;
@@ -181,6 +186,7 @@
 				F69AF5971784B2F500CBE183 /* main.m in Sources */,
 				F69AF59B1784B2F500CBE183 /* DRTAppDelegate.m in Sources */,
 				F69AF5AA1784B2F500CBE183 /* DRTViewController.m in Sources */,
+				F69AF5B21784B33800CBE183 /* DRTTimerControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,18 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="DRTViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2S0-PW-qm4">
+                                <connections>
+                                    <action selector="sliderTouchCancel:" destination="2" eventType="touchCancel" id="3D9-F5-iT5"/>
+                                    <action selector="sliderTouchDown:" destination="2" eventType="touchDown" id="ADp-zU-wIB"/>
+                                    <action selector="sliderTouchDragEnter:" destination="2" eventType="touchDragEnter" id="rfV-yW-7AY"/>
+                                    <action selector="sliderTouchDragExit:" destination="2" eventType="touchDragExit" id="LVS-vf-Weu"/>
+                                    <action selector="sliderTouchDragInside:" destination="2" eventType="touchDragInside" id="2xQ-2p-cr0"/>
+                                    <action selector="sliderTouchDragOutside:" destination="2" eventType="touchDragOutside" id="CA0-tR-PWJ"/>
+                                    <action selector="sliderTouchUpInside:" destination="2" eventType="touchUpInside" id="e1J-N1-TmU"/>
+                                    <action selector="sliderTouchUpOutside:" destination="2" eventType="touchUpOutside" id="a8f-U0-U20"/>
+                                    <action selector="sliderValueChanged:" destination="2" eventType="valueChanged" id="JWp-6o-Ixx"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Digital Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ze8-YK-uea">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="195" id="E5I-oQ-3ci"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Update Rate" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7P-F2-NYB">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Slider State" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzo-kU-s6o">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L7P-F2-NYB" firstAttribute="trailing" secondItem="ze8-YK-uea" secondAttribute="trailing" type="default" id="2me-16-gDY"/>
+                            <constraint firstItem="L7P-F2-NYB" firstAttribute="trailing" secondItem="lzo-kU-s6o" secondAttribute="trailing" type="default" id="4hD-Ai-ylj"/>
+                            <constraint firstItem="lzo-kU-s6o" firstAttribute="top" secondItem="3" secondAttribute="top" constant="248" id="BAF-aw-ifb"/>
+                            <constraint firstItem="lzo-kU-s6o" firstAttribute="leading" secondItem="2S0-PW-qm4" secondAttribute="leading" type="default" id="ChG-cr-9Fm"/>
+                            <constraint firstItem="ze8-YK-uea" firstAttribute="leading" secondItem="L7P-F2-NYB" secondAttribute="leading" type="default" id="EXX-xO-S42"/>
+                            <constraint firstAttribute="bottom" secondItem="2S0-PW-qm4" secondAttribute="bottom" constant="215" id="GqS-bd-Lld"/>
+                            <constraint firstItem="lzo-kU-s6o" firstAttribute="leading" secondItem="L7P-F2-NYB" secondAttribute="leading" type="default" id="UK5-Nv-Pfp"/>
+                            <constraint firstItem="ze8-YK-uea" firstAttribute="top" secondItem="3" secondAttribute="top" constant="85" id="Zu3-i7-gJ3"/>
+                            <constraint firstItem="2S0-PW-qm4" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="hpY-uL-F0M"/>
+                            <constraint firstItem="2S0-PW-qm4" firstAttribute="trailing" secondItem="lzo-kU-s6o" secondAttribute="trailing" type="default" id="u3u-Kh-y4Y"/>
+                            <constraint firstItem="L7P-F2-NYB" firstAttribute="top" secondItem="3" secondAttribute="top" constant="194" id="wKu-JQ-J9S"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="doSliderStateLabel" destination="lzo-kU-s6o" id="9Yw-EI-efg"/>
+                        <outlet property="doTimeLabel" destination="ze8-YK-uea" id="Udf-8u-R4j"/>
+                        <outlet property="doUpdateLabel" destination="L7P-F2-NYB" id="F1p-Ph-TFu"/>
+                        <outlet property="sliderOutlet" destination="2S0-PW-qm4" id="1mk-Lm-rpn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
