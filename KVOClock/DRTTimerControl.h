@@ -11,6 +11,7 @@
 
 @interface DRTTimerControl : NSObject
 
--(void)setSValue:(float)value;
+-(void)doRateValue:(NSNumber *)value;
+-(void)setTimerRateSharedKey;
 
 @end

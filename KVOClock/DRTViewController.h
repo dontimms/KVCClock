@@ -13,6 +13,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *doUpdateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *doSliderStateLabel;
 @property (weak, nonatomic) IBOutlet UISlider *sliderOutlet;
+
+//@property NSNumber * sliderValueLocalKey;
+
+// 1. Declared property of name of Key
+//@property NSNumber *sliderValueLocalKey;
+
 - (IBAction)sliderTouchDown:(id)sender;
 - (IBAction)sliderTouchDragInside:(id)sender;
 - (IBAction)sliderValueChanged:(id)sender;

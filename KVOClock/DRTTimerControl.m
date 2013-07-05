@@ -10,11 +10,10 @@
 
 @implementation DRTTimerControl
 {
-    NSString * timeString; // time string is visible and contains the string
-
+    NSString * timeStringSharedKey; // time string is visible and contains the string
 }
 
-NSNumber * sliderValue; // this is the update rate of the timer
+// NSNumber * rateValueLocalKey; // this is the update rate of the timer
 NSTimer * timer;
 NSInteger counter;
 
@@ -24,46 +23,55 @@ NSInteger counter;
     self = [super init];
     if (self) {
         [self setInterruptRate:[NSNumber numberWithFloat:10.0]];
-        [self addObserver:self forKeyPath:@"sliderValue" options:NSKeyValueObservingOptionNew context:nil];
+        // observe the rateValue locally to set interrupts.
+        [self addObserver:self forKeyPath:@"rateValueLocalKey" options:NSKeyValueObservingOptionNew context:nil];
         counter = 0;
     }
     return self;
 }
 
-// called
--(NSString *)timeString
+// called. this should return some 'organic' information 
+-(NSString *)timeStringSharedKey
 {
     // get current time (down to 1/10's)
     counter ++;
     NSDate *date = [NSDate date];
     NSDateFormatter *dateFormtter = [[NSDateFormatter alloc] init];
     [dateFormtter setDateFormat:@"HH:mm:ss"];
-    NSString * dateCount = [[NSString alloc] initWithFormat:@"%@ %4i",[dateFormtter stringFromDate:date],counter];
-    if( !(counter % 1000) ) counter = 0;
+    NSString * dateCount = [[NSString alloc] initWithFormat:@"%@ %003i",[dateFormtter stringFromDate:date],counter];
+    if( !(counter % 999) ) counter = 0;
     return dateCount;
 
 }
 
--(void)setTimeString
+// sets the key value to the 'organic' value in the getter.
+-(void)setTimeStringSharedKey
 {
-    [self setValue:[self timeString] forKey:@"timeString"];
+    [self setValue:[self timeStringSharedKey] forKey:@"timeStringSharedKey"];
 }
 
--(NSNumber *)sliderValue
+
+/*
+-(NSNumber *)rateValueLocalKey
 {
-    return sliderValue;
+    return nil;
 }
 
--(void)setSliderValue
-{
- //   [self setValue:@2.0 forKey:@"sliderValue"];
-}
 
--(void)setSValue:(float)value
+-(void)setRateValueLocalKey
 {
-    NSNumber * num = [NSNumber numberWithFloat:value];
-    sliderValue = num;
-    [self setValue:[self sliderValue] forKey:@"sliderValue"];
+//    [self setValue:@2.0 forKey:@"sliderValue"];
+}
+*/
+
+// this will set rateValue, which should trigger the rateValue KVO handler
+-(void)doRateValue:(NSNumber *)value
+{
+    NSNumber * num = value;
+    [self setInterruptRate:num];
+ //   [self setValue:num forKey:@"rateValueLocalKey"];
+//BAD!!    rateValue = num;
+  //  [self setValue:num forKey:@"rateValue"];
 }
 
 // invoked only at init & when slider changes value.
@@ -78,12 +86,12 @@ NSInteger counter;
     if( timer ) [timer invalidate];
     
     // set new timer interrupt at current rate
-    timer = [NSTimer scheduledTimerWithTimeInterval:1/timerInterval target:self selector:@selector(setTimeString) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:1/timerInterval target:self selector:@selector(setTimeStringSharedKey) userInfo:nil repeats:YES];
 }
 
 -(void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if( [keyPath isEqualToString:@"sliderValue"]) {
+    if( [keyPath isEqualToString:@"rateValueLocalKey"]) {
         NSNumber * num = [change objectForKey:@"new"];
         [self setInterruptRate:num];
     }
