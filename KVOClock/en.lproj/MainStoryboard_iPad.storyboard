@@ -34,6 +34,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Slider State" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3b-d0-hrr">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="562" id="hbZ-Nj-Duz"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,16 +44,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="u6J-W8-TNe" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="316" id="0l0-j3-4Lg"/>
-                            <constraint firstItem="PCH-Dw-N0l" firstAttribute="trailing" secondItem="F3b-d0-hrr" secondAttribute="trailing" type="default" id="41Y-aH-l7Z"/>
-                            <constraint firstItem="F3b-d0-hrr" firstAttribute="trailing" secondItem="4OA-qv-8Yz" secondAttribute="trailing" type="default" id="51T-7y-gAD"/>
-                            <constraint firstItem="4OA-qv-8Yz" firstAttribute="leading" secondItem="F3b-d0-hrr" secondAttribute="leading" type="default" id="C5e-CU-tjO"/>
                             <constraint firstAttribute="bottom" secondItem="PCH-Dw-N0l" secondAttribute="bottom" constant="462" id="HW6-Bq-ANd"/>
                             <constraint firstAttribute="bottom" secondItem="4OA-qv-8Yz" secondAttribute="bottom" constant="343" id="JfN-Le-tLt"/>
                             <constraint firstAttribute="bottom" secondItem="F3b-d0-hrr" secondAttribute="bottom" constant="408" id="KNQ-m3-QQr"/>
                             <constraint firstItem="PCH-Dw-N0l" firstAttribute="trailing" secondItem="u6J-W8-TNe" secondAttribute="trailing" type="default" id="U0o-R8-Jyf"/>
                             <constraint firstItem="u6J-W8-TNe" firstAttribute="top" secondItem="5" secondAttribute="top" constant="412" id="VZo-fx-dNE"/>
-                            <constraint firstItem="F3b-d0-hrr" firstAttribute="leading" secondItem="PCH-Dw-N0l" secondAttribute="leading" type="default" id="YgN-EM-MBt"/>
+                            <constraint firstItem="F3b-d0-hrr" firstAttribute="centerX" secondItem="PCH-Dw-N0l" secondAttribute="centerX" type="default" id="Y1K-sq-EMe"/>
+                            <constraint firstItem="4OA-qv-8Yz" firstAttribute="trailing" secondItem="PCH-Dw-N0l" secondAttribute="trailing" type="default" id="dIp-jn-6J8"/>
+                            <constraint firstItem="F3b-d0-hrr" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="132" id="fhc-7w-8G8"/>
+                            <constraint firstItem="4OA-qv-8Yz" firstAttribute="leading" secondItem="PCH-Dw-N0l" secondAttribute="leading" type="default" id="v82-IY-Pp8"/>
                             <constraint firstItem="PCH-Dw-N0l" firstAttribute="leading" secondItem="u6J-W8-TNe" secondAttribute="leading" type="default" id="wWt-hJ-lpu"/>
                         </constraints>
                     </view>
