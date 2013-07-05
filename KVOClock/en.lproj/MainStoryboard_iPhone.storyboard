@@ -39,7 +39,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Slider State" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzo-kU-s6o">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="zaV-GH-yHL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -47,15 +50,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="L7P-F2-NYB" firstAttribute="trailing" secondItem="ze8-YK-uea" secondAttribute="trailing" type="default" id="2me-16-gDY"/>
-                            <constraint firstItem="L7P-F2-NYB" firstAttribute="trailing" secondItem="lzo-kU-s6o" secondAttribute="trailing" type="default" id="4hD-Ai-ylj"/>
                             <constraint firstItem="lzo-kU-s6o" firstAttribute="top" secondItem="3" secondAttribute="top" constant="248" id="BAF-aw-ifb"/>
-                            <constraint firstItem="lzo-kU-s6o" firstAttribute="leading" secondItem="2S0-PW-qm4" secondAttribute="leading" type="default" id="ChG-cr-9Fm"/>
                             <constraint firstItem="ze8-YK-uea" firstAttribute="leading" secondItem="L7P-F2-NYB" secondAttribute="leading" type="default" id="EXX-xO-S42"/>
                             <constraint firstAttribute="bottom" secondItem="2S0-PW-qm4" secondAttribute="bottom" constant="215" id="GqS-bd-Lld"/>
-                            <constraint firstItem="lzo-kU-s6o" firstAttribute="leading" secondItem="L7P-F2-NYB" secondAttribute="leading" type="default" id="UK5-Nv-Pfp"/>
+                            <constraint firstItem="L7P-F2-NYB" firstAttribute="trailing" secondItem="2S0-PW-qm4" secondAttribute="trailing" type="default" id="H2Y-31-YXo"/>
+                            <constraint firstItem="lzo-kU-s6o" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Tn6-aL-sJU"/>
                             <constraint firstItem="ze8-YK-uea" firstAttribute="top" secondItem="3" secondAttribute="top" constant="85" id="Zu3-i7-gJ3"/>
-                            <constraint firstItem="2S0-PW-qm4" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="hpY-uL-F0M"/>
-                            <constraint firstItem="2S0-PW-qm4" firstAttribute="trailing" secondItem="lzo-kU-s6o" secondAttribute="trailing" type="default" id="u3u-Kh-y4Y"/>
+                            <constraint firstItem="lzo-kU-s6o" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="Zv0-6f-3Zm"/>
+                            <constraint firstItem="L7P-F2-NYB" firstAttribute="centerX" secondItem="lzo-kU-s6o" secondAttribute="centerX" type="default" id="faY-v5-Eqe"/>
+                            <constraint firstItem="2S0-PW-qm4" firstAttribute="leading" secondItem="L7P-F2-NYB" secondAttribute="leading" type="default" id="gGC-5H-NBM"/>
                             <constraint firstItem="L7P-F2-NYB" firstAttribute="top" secondItem="3" secondAttribute="top" constant="194" id="wKu-JQ-J9S"/>
                         </constraints>
                     </view>
@@ -70,6 +73,29 @@
             </objects>
         </scene>
     </scenes>
+    <classes>
+        <class className="DRTViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DRTViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="sliderTouchCancel:"/>
+                <relationship kind="action" name="sliderTouchDown:"/>
+                <relationship kind="action" name="sliderTouchDragEnter:"/>
+                <relationship kind="action" name="sliderTouchDragExit:"/>
+                <relationship kind="action" name="sliderTouchDragInside:"/>
+                <relationship kind="action" name="sliderTouchDragOutside:"/>
+                <relationship kind="action" name="sliderTouchUpInside:"/>
+                <relationship kind="action" name="sliderTouchUpOutside:"/>
+                <relationship kind="action" name="sliderValueChanged:"/>
+                <relationship kind="outlet" name="doSliderStateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="doTimeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="doUpdateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sliderOutlet" candidateClass="UISlider"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

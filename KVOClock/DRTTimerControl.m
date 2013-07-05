@@ -41,7 +41,6 @@ NSInteger counter;
     NSString * dateCount = [[NSString alloc] initWithFormat:@"%@ %003i",[dateFormtter stringFromDate:date],counter];
     if( !(counter % 999) ) counter = 0;
     return dateCount;
-
 }
 
 // sets the key value to the 'organic' value in the getter.
@@ -57,12 +56,12 @@ NSInteger counter;
     return nil;
 }
 
-
 -(void)setRateValueLocalKey
 {
 //    [self setValue:@2.0 forKey:@"sliderValue"];
 }
-*/
+ */
+
 
 // this will set rateValue, which should trigger the rateValue KVO handler
 -(void)doRateValue:(NSNumber *)value
@@ -89,6 +88,7 @@ NSInteger counter;
     timer = [NSTimer scheduledTimerWithTimeInterval:1/timerInterval target:self selector:@selector(setTimeStringSharedKey) userInfo:nil repeats:YES];
 }
 
+/*
 -(void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if( [keyPath isEqualToString:@"rateValueLocalKey"]) {
@@ -96,5 +96,6 @@ NSInteger counter;
         [self setInterruptRate:num];
     }
 }
+ */
 
 @end

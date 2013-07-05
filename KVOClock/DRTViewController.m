@@ -34,10 +34,9 @@
     timerControl = [[DRTTimerControl alloc] init];  // start the timer
     // add observers
     [timerControl addObserver:self forKeyPath:@"timeStringSharedKey" options:NSKeyValueObservingOptionNew context:nil];
-//    [timerControl addObserver:self forKeyPath:@"timerRateSharedKey" options:NSKeyValueObservingOptionNew context:nil];
     
     [self addObserver:self forKeyPath:@"sliderValueLocalKey" options:NSKeyValueObservingOptionNew context:nil];
-        [self addObserver:self forKeyPath:@"sliderDoneLocalKey" options:NSKeyValueObservingOptionNew context:nil];    
+    [self addObserver:self forKeyPath:@"sliderDoneLocalKey" options:NSKeyValueObservingOptionNew context:nil];    
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,42 +67,52 @@
 #pragma mark - slider states for understanding the slider options
 - (IBAction)sliderTouchDown:(id)sender
 {
+    doSliderStateLabel.text = [[NSString alloc] initWithFormat:@"%s",__FUNCTION__];
 }
 
 - (IBAction)sliderTouchDragInside:(id)sender
 {
-}
+    doSliderStateLabel.text = [[NSString alloc] initWithFormat:@"%s",__FUNCTION__];}
 
 // update the slider as values change
 - (IBAction)sliderValueChanged:(id)sender
 {
+    doSliderStateLabel.text = [[NSString alloc] initWithFormat:@"%s",__FUNCTION__];
     [self setSliderValueLocalKey];
 }
 
 // this happens when sliding is done, and this will update the actual rate variable.
 - (IBAction)sliderTouchUpOutside:(id)sender
 {
+    doSliderStateLabel.text = [[NSString alloc] initWithFormat:@"%s",__FUNCTION__];
     [self setValue:@0.0 forKey:@"sliderDoneLocalKey"];
 }
 
-- (IBAction)sliderTouchDragExit:(id)sender {
+- (IBAction)sliderTouchDragExit:(id)sender
+{
+    doSliderStateLabel.text = [[NSString alloc] initWithFormat:@"%s",__FUNCTION__];
 }
 
-- (IBAction)sliderTouchCancel:(id)sender {
-    NSLog(@"");
+- (IBAction)sliderTouchCancel:(id)sender
+{
+    doSliderStateLabel.text = [[NSString alloc] initWithFormat:@"%s",__FUNCTION__];
 }
 
-- (IBAction)sliderTouchDragOutside:(id)sender {
+- (IBAction)sliderTouchDragOutside:(id)sender
+{
+    doSliderStateLabel.text = [[NSString alloc] initWithFormat:@"%s",__FUNCTION__];
 }
 
-- (IBAction)sliderTouchUpInside:(id)sender {
-
+- (IBAction)sliderTouchUpInside:(id)sender
+{
+    doSliderStateLabel.text = [[NSString alloc] initWithFormat:@"%s",__FUNCTION__];
     // set this using the method in timerControl.
     [self setValue:@0.0 forKey:@"sliderDoneLocalKey"];
-
 }
 
-- (IBAction)sliderTouchDragEnter:(id)sender {
+- (IBAction)sliderTouchDragEnter:(id)sender
+{
+    doSliderStateLabel.text = [[NSString alloc] initWithFormat:@"%s",__FUNCTION__];
 }
 
 #pragma mark - key observer for this process
@@ -111,26 +120,15 @@
 {
     if( [keyPath isEqualToString:@"timeStringSharedKey"]) {
         doTimeLabel.text = [change objectForKey:@"new"];
-//        NSLog(@"keypath: %@", keyPath);
- //       NSLog(@"object: %@", object);
-//        NSLog(@"change: %@", change);
-//        NSLog(@"context: %@", context);
+
     }
     if( [keyPath isEqualToString:@"sliderValueLocalKey"]) {
-        //doTimeLabel.text = [change objectForKey:@"new"].value;
         NSString * ts = [[NSString alloc] initWithFormat:@"%2@",[change objectForKey:@"new"]];
         doUpdateLabel.text = ts;
     }
     if( [keyPath isEqualToString:@"sliderDoneLocalKey"]) {
-        NSLog(@"keypath: %@", keyPath);
-        NSLog(@"object: %@", object);
-        NSLog(@"change: %@", change);
-        NSLog(@"context: %@", context);
-        NSLog(@"Slider out %@", [self valueForKey:@"sliderValueLocalKey"]);
-        // execution gets here when timerRateSharedKey is set, simply update the rate in timerControl
         [timerControl doRateValue:[self valueForKey:@"sliderValueLocalKey"]];
-//        [timerControl setValue:[self sliderValueLocalKey] forKey:@"setTimerRateSharedKey"];
-//        [timerControl setTimerRate:[change objectForKey:@"new"]];
+
     }
 }
 @end
